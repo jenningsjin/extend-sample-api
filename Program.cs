@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.Configuration;
-using System.ComponentModel;
+
+using static Util.util;
 
 using DataModel;
 
 
 namespace MyApplication
 {
-    // https://medium.com/@dozieogbo/a-better-way-to-inject-appsettings-in-asp-net-core-96be36ffa22b
     class Program
     {
         static void Main(string[] args)
@@ -25,7 +25,6 @@ namespace MyApplication
             // Init Singletons, Contexts, etc
             var client = new HttpClient();
             var session = new ExtendSession(email, password, config.GetSection("ConnectionStrings"), client);
-            
      
             // "Application Logic" 
             Console.WriteLine("Hi, Welcome to the JenningsCo. Pay with Extend Terminal");
@@ -64,18 +63,6 @@ namespace MyApplication
                     Console.WriteLine("\nThanks for using the Terminal and We hope you have a nice day\n");
                     break;
                 }
-            }
-
-        }
-
-        // helper function to help display things
-        public static void PrintProperties(object obj) {
-            // Helper Function to 
-            foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(obj))
-            {
-                string name = descriptor.Name;
-                object value = descriptor.GetValue(obj);
-                Console.WriteLine("{0}={1}", name, value);
             }
         }
     }

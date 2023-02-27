@@ -4,7 +4,7 @@ namespace Util {
     static class util {
 
         // Generic Function that Prints all the Properties of a Given Object.
-        public static void PrintPropreties(object obj) {
+        public static void PrintProperties(object obj) {
             // Helper Function to 
             foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(obj))
             {
