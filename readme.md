@@ -1,4 +1,4 @@
-Implmenting the a wrapper around the [Extend Api](https://developer.paywithextend.com).
+Implmentinga wrapper around the [Extend Api](https://developer.paywithextend.com) for some basic functionalities of the API.
 
 Main Application runs from `Program.cs`. The intended interface is defined by the `Session` class in `Session.cs`
 Internals and Restful API calls are grouped by functionality and 'tucked away' in `ExtendInternal/`.
